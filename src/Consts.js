@@ -1,5 +1,6 @@
-export const BACKEND_PATH = "http://localhost:8000";
-// export const BACKEND_PATH = "https://u1store1api.pythonanywhere.com";
+// export const BACKEND_PATH = "http://localhost:8000";
+export const BACKEND_PATH =
+  "https://udv1store1api.pythonanywhere.com";
 
 export const TOKEN_LIFE_TIME = 29 * 60;
 

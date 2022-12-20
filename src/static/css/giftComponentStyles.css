@@ -27,8 +27,7 @@
 .incoming-gifts .gifts-wrapper > ul > li {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 10%;
+  justify-content: space-around;
 
   row-gap: 5%;
 
@@ -38,6 +37,11 @@
 
   overflow-x: hidden;
   overflow-y: auto;
+
+  background-image: url("../svg/AcceptGiftDecoration.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 100% 100%;
 }
 
 .incoming-gifts .gifts-wrapper > ul > li > .sender {
@@ -45,6 +49,8 @@
 }
 
 .incoming-gifts .gift-manage-wrapper {
+  margin-top: 3%;
+
   display: flex;
   justify-content: center;
   align-items: center;

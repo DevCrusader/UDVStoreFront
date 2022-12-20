@@ -56,38 +56,38 @@ const useFetch = (options) => {
 
     dispatch({ type: resultTypes.START_FETCH });
 
-    setTimeout(
-      () =>
-        axios({
-          url,
-          method,
-          data,
-          headers,
-        })
-          .then((res) => {
-            if (!cancelRequest.current)
-              dispatch({
-                type: resultTypes.SET_DATA,
-                payload: res.data,
-              });
-          })
-          .catch((err) => {
-            if (!cancelRequest.current) {
-              dispatch({
-                type: resultTypes.SET_ERROR,
-                payload: {
-                  message: err.message,
-                  status: err.response.status,
-                  additionalInfo:
-                    err.response.status === 400
-                      ? err.response.data
-                      : null,
-                },
-              });
-            }
-          }),
-      100 * 2000
-    );
+    // setTimeout(
+    //   () =>
+    axios({
+      url,
+      method,
+      data,
+      headers,
+    })
+      .then((res) => {
+        if (!cancelRequest.current)
+          dispatch({
+            type: resultTypes.SET_DATA,
+            payload: res.data,
+          });
+      })
+      .catch((err) => {
+        if (!cancelRequest.current) {
+          dispatch({
+            type: resultTypes.SET_ERROR,
+            payload: {
+              message: err.message,
+              status: err.response.status,
+              additionalInfo:
+                err.response.status === 400
+                  ? err.response.data
+                  : null,
+            },
+          });
+        }
+      });
+    //   100 * 2000
+    // );
 
     return () => (cancelRequest.current = false);
   }, [options]);
