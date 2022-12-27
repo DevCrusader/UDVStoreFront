@@ -168,7 +168,7 @@ const AuthorizationComponent = () => {
 
   return (
     <form onSubmit={_loginUser} className="login-form">
-      <div className="header">Сервис для сотрудников УЦСБ.</div>
+      <div className="header">Сервис для сотрудников UDV.</div>
 
       <label htmlFor="id-username">
         <input
